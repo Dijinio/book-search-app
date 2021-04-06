@@ -1,7 +1,7 @@
 import axios from "axios";
-import { GOOGLE_API_KEY } from "../config/index";
+// import { GOOGLE_API_KEY } from "../config/index";
 
-const KEY = GOOGLE_API_KEY;
+const KEY = process.env.GOOGLE_API_KEY;
 
 axios.defaults.baseURL = "https://www.googleapis.com/books/v1";
 
