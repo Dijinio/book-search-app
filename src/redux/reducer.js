@@ -1,9 +1,11 @@
-const reducer = (books = [], action) => {
+const reducer = (state = { books: [], liveResults: [] }, action) => {
   switch (action.type) {
     case "FETCH_BOOKS":
-      return books;
+      return { ...state, books: action.payload };
+    case "LIVE_SEARCH":
+      return { ...state, liveResults: action.payload };
     default:
-      return books;
+      return state;
   }
 };
 
