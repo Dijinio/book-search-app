@@ -16,7 +16,7 @@ export const liveSearchBooks = (title) => async (dispatch) => {
     const {
       data: { items },
     } = await api.liveSearch(title);
-    const bookTitles = items.map((item) => item.volumeInfo.title);
+    const bookTitles = items?.map((item) => item.volumeInfo.title);
     dispatch({ type: "LIVE_SEARCH", payload: bookTitles });
   } catch (error) {
     console.log(error.message);
